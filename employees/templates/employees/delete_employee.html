@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete{% endblock %}
+
+{% block content %}
+    <h1>Delete Employee</h1>
+    <p>Are you sure you want to delete {{ employee.name }}?</p>
+    <form method="post" style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        {% csrf_token %}
+        <button type="submit" style="background-color: #dc3545; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Delete</button>
+    </form>
+    <a href="{% url 'employee_list' %}" style="display: inline-block; margin-top: 10px; color: #007bff;">Cancel</a>
+{% endblock %}

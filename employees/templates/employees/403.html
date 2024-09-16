@@ -1,0 +1,10 @@
+<!-- 403.html -->
+{% extends 'base.html' %}
+
+{% block title %}Access Denied{% endblock %}
+
+{% block content %}
+<h1>403 - Permission Denied</h1>
+<p>Sorry, you don't have permission to access this page.</p>
+<a href="{% url 'login' %}">Login</a>
+{% endblock %}

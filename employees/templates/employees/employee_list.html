@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Employee List{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center; color: #333;">Employee List</h1>
+<ul style="list-style-type: none; padding: 0;">
+    {% for employee in employees %}
+    <li style="margin-bottom: 10px;">
+        {{ employee.name }} ({{ employee.designation }})
+        <a href="{% url 'update_employee' employee.pk %}" style="margin-left: 10px;">Update</a>
+        <a href="{% url 'delete_employee' employee.pk %}" style="margin-left: 10px;">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
